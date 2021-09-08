@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<button type="button" class="btn btn-primary">Left</button>
-<button type="button" class="btn btn-primary">Left</button>
-</body>
-</html>
+@extends('layout.app')
+@section('title','home')
+@section('content')
+<div class="container">
+    <div class="row">
+     @foreach($viaggi as  $viaggio)
+        <div class="col-4 my-3">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{$viaggio['title']}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{$viaggio['location']}}</h6>
+    <p class="card-text">{{$viaggio['description']}}</p>
+    <p class="card-text">{{$viaggio['price']}}$</p>
+  </div>
+</div>
+</div>
+@endforeach
+    </div>
+</div>
+
+@endsection
